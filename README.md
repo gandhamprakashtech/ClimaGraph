@@ -23,17 +23,20 @@ A comprehensive React.js application for generating professional weather reports
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/gandhamprakashtech/ClimaGraph
    cd ClimaGraph
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm start
    ```
@@ -55,6 +58,7 @@ REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 ### API Keys Setup
 
 1. **OpenWeatherMap API**:
+
    - Visit [OpenWeatherMap](https://openweathermap.org/api)
    - Sign up for a free account
    - Get your API key
@@ -103,12 +107,14 @@ src/
 ## 📱 Pages Overview
 
 ### Home Page
+
 - Search bar for city names
 - Google Maps integration for location selection
 - Feature highlights and statistics
 - Call-to-action sections
 
 ### Weather Report Page
+
 - Current weather conditions
 - Interactive temperature and humidity charts
 - Detailed weather metrics
@@ -116,18 +122,21 @@ src/
 - Save report option
 
 ### History Page
+
 - View saved weather reports
 - Refresh weather data for saved locations
 - Delete old reports
 - Statistics and analytics
 
 ### About Page
+
 - Application information
 - Technology stack details
 - Mission and features
 - Responsive design showcase
 
 ### Contact Page
+
 - Contact form with validation
 - Contact information
 - FAQ section
@@ -136,13 +145,17 @@ src/
 ## 🎨 Customization
 
 ### Themes
+
 The application supports dark and light themes. Theme preferences are saved in localStorage and automatically applied on page load.
 
 ### Styling
+
 All styles are built with TailwindCSS. You can customize the design by modifying the Tailwind configuration in `tailwind.config.js`.
 
 ### Colors
+
 The primary color scheme can be customized in the Tailwind config:
+
 - Primary: Blue shades
 - Dark mode: Gray shades
 - Accent: Purple gradients
@@ -150,11 +163,13 @@ The primary color scheme can be customized in the Tailwind config:
 ## 📊 Data Management
 
 ### Weather Data
+
 - Fetched from OpenWeatherMap API
 - Cached in React Context
 - Mock data available for demo purposes
 
 ### Report Storage
+
 - Reports saved in browser localStorage
 - Maximum 10 reports stored
 - Automatic cleanup of old reports
@@ -162,16 +177,19 @@ The primary color scheme can be customized in the Tailwind config:
 ## 🚀 Deployment
 
 ### Build for Production
+
 ```bash
 npm run build
 ```
 
 ### Deploy to Netlify
+
 1. Build the project
 2. Upload the `build` folder to Netlify
 3. Configure environment variables in Netlify dashboard
 
 ### Deploy to Vercel
+
 1. Connect your GitHub repository to Vercel
 2. Configure environment variables
 3. Deploy automatically on push
