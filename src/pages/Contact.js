@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Send, 
-  MessageSquare, 
+import React, { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  MessageSquare,
   Clock,
   CheckCircle,
-  AlertCircle
-} from 'lucide-react';
-import toast from 'react-hot-toast';
+  AlertCircle,
+} from "lucide-react";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
@@ -25,23 +25,23 @@ const Contact = () => {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = "Name is required";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = "Email is invalid";
     }
 
     if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
+      newErrors.subject = "Subject is required";
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = "Message is required";
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters long';
+      newErrors.message = "Message must be at least 10 characters long";
     }
 
     setErrors(newErrors);
@@ -50,26 +50,26 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
-      toast.error('Please fix the errors in the form');
+      toast.error("Please fix the errors in the form");
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
       // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       // In a real app, you would send the data to your backend
-      console.log('Form submitted:', formData);
-      
-      toast.success('Message sent successfully! We\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      console.log("Form submitted:", formData);
+
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
       setErrors({});
     } catch (error) {
-      toast.error('Failed to send message. Please try again.');
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -77,16 +77,16 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ''
+        [name]: "",
       }));
     }
   };
@@ -94,49 +94,55 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email Us',
-      details: 'info@climagraph.com',
-      description: 'Send us an email and we\'ll respond within 24 hours'
+      title: "Email Us",
+      details: "prakash@gmail.com",
+      description: "Send us an email and we'll respond within 24 hours",
     },
     {
       icon: Phone,
-      title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 8am to 6pm EST'
+      title: "Call Us",
+      details: "+91 9392668***",
+      description: "Mon-Fri from 8am to 6pm EST",
     },
     {
       icon: MapPin,
-      title: 'Visit Us',
-      details: 'New York, NY 10001',
-      description: 'We\'re located in the heart of Manhattan'
-    }
+      title: "Visit Us",
+      details: "Vijayawada",
+      description: "We're located in the heart of Manhattan",
+    },
   ];
 
   const faqs = [
     {
-      question: 'How accurate is the weather data?',
-      answer: 'Our weather data comes from reliable sources and is updated every 10 minutes. We maintain 99.9% accuracy for current conditions and high accuracy for forecasts.'
+      question: "How accurate is the weather data?",
+      answer:
+        "Our weather data comes from reliable sources and is updated every 10 minutes. We maintain 99.9% accuracy for current conditions and high accuracy for forecasts.",
     },
     {
-      question: 'Is ClimaGraph free to use?',
-      answer: 'Yes! ClimaGraph is completely free to use. You can generate unlimited weather reports without any cost or subscription.'
+      question: "Is ClimaGraph free to use?",
+      answer:
+        "Yes! ClimaGraph is completely free to use. You can generate unlimited weather reports without any cost or subscription.",
     },
     {
-      question: 'Can I download weather reports as PDF?',
-      answer: 'Absolutely! You can download any weather report as a professional PDF document with charts and detailed information.'
+      question: "Can I download weather reports as PDF?",
+      answer:
+        "Absolutely! You can download any weather report as a professional PDF document with charts and detailed information.",
     },
     {
-      question: 'Do you store my personal data?',
-      answer: 'We only store weather reports locally in your browser. We don\'t collect or store any personal information on our servers.'
+      question: "Do you store my personal data?",
+      answer:
+        "We only store weather reports locally in your browser. We don't collect or store any personal information on our servers.",
     },
     {
-      question: 'How often is the weather data updated?',
-      answer: 'Weather data is updated every 10 minutes for current conditions and every 3 hours for forecasts to ensure accuracy.'
+      question: "How often is the weather data updated?",
+      answer:
+        "Weather data is updated every 10 minutes for current conditions and every 3 hours for forecasts to ensure accuracy.",
     },
     {
-      question: 'Can I use this for commercial purposes?',
-      answer: 'Yes, you can use ClimaGraph for both personal and commercial purposes. The generated reports are yours to use as needed.'
-    }
+      question: "Can I use this for commercial purposes?",
+      answer:
+        "Yes, you can use ClimaGraph for both personal and commercial purposes. The generated reports are yours to use as needed.",
+    },
   ];
 
   return (
@@ -148,8 +154,8 @@ const Contact = () => {
             Contact Us
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Have questions about ClimaGraph? We'd love to hear from you. 
-            Send us a message and we'll respond as soon as possible.
+            Have questions about ClimaGraph? We'd love to hear from you. Send us
+            a message and we'll respond as soon as possible.
           </p>
         </div>
 
@@ -167,7 +173,10 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -176,7 +185,9 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`input-field ${errors.name ? 'border-red-500 focus:ring-red-500' : ''}`}
+                      className={`input-field ${
+                        errors.name ? "border-red-500 focus:ring-red-500" : ""
+                      }`}
                       placeholder="Enter your full name"
                     />
                     {errors.name && (
@@ -188,7 +199,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
                       Email Address *
                     </label>
                     <input
@@ -197,7 +211,9 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`input-field ${errors.email ? 'border-red-500 focus:ring-red-500' : ''}`}
+                      className={`input-field ${
+                        errors.email ? "border-red-500 focus:ring-red-500" : ""
+                      }`}
                       placeholder="Enter your email address"
                     />
                     {errors.email && (
@@ -210,7 +226,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Subject *
                   </label>
                   <input
@@ -219,7 +238,9 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className={`input-field ${errors.subject ? 'border-red-500 focus:ring-red-500' : ''}`}
+                    className={`input-field ${
+                      errors.subject ? "border-red-500 focus:ring-red-500" : ""
+                    }`}
                     placeholder="What's this about?"
                   />
                   {errors.subject && (
@@ -231,7 +252,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Message *
                   </label>
                   <textarea
@@ -240,7 +264,9 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`input-field resize-none ${errors.message ? 'border-red-500 focus:ring-red-500' : ''}`}
+                    className={`input-field resize-none ${
+                      errors.message ? "border-red-500 focus:ring-red-500" : ""
+                    }`}
                     placeholder="Tell us how we can help you..."
                   />
                   {errors.message && (
@@ -341,25 +367,27 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {faq.answer}
-                </p>
+                <p className="text-gray-600 dark:text-gray-300">{faq.answer}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Success Message */}
-        {Object.keys(errors).length === 0 && formData.name && formData.email && formData.subject && formData.message && (
-          <div className="mt-8 card bg-green-50 dark:bg-green-900 border-green-200 dark:border-green-700">
-            <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-3" />
-              <p className="text-green-800 dark:text-green-200">
-                Your form looks good! Click "Send Message" to submit.
-              </p>
+        {Object.keys(errors).length === 0 &&
+          formData.name &&
+          formData.email &&
+          formData.subject &&
+          formData.message && (
+            <div className="mt-8 card bg-green-50 dark:bg-green-900 border-green-200 dark:border-green-700">
+              <div className="flex items-center">
+                <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mr-3" />
+                <p className="text-green-800 dark:text-green-200">
+                  Your form looks good! Click "Send Message" to submit.
+                </p>
+              </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
     </div>
   );
