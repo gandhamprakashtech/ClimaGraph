@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Cloud, Github, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Cloud, Github, Twitter, Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,31 +18,32 @@ const Footer = () => {
               <span className="text-2xl font-bold">ClimaGraph</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Professional weather report generator with advanced analytics, 
-              interactive charts, and comprehensive weather data for any location worldwide.
+              Professional weather report generator with advanced analytics,
+              interactive charts, and comprehensive weather data for any
+              location worldwide.
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://github.com/gandhamprakashtech"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com/GandhamPrakash_"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a
-                href="#"
+              {/* <a
+                href="gandhamprakashtech@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -50,14 +51,13 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  to="/"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                >
-                  Home
-                </Link>
-              </li>
+              <li></li>
+              <a
+                href="#"
+                className="text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                Home
+              </a>
               <li>
                 <Link
                   to="/weather"
@@ -99,15 +99,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-blue-400" />
-                <span className="text-gray-300">New York, NY 10001</span>
+                <span className="text-gray-300">Vijayawada</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-blue-400" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+91 9392668228</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-blue-400" />
-                <span className="text-gray-300">info@climagraph.com</span>
+                <span className="text-gray-300">info@gmail.com</span>
               </div>
             </div>
           </div>
