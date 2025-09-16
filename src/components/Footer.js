@@ -1,6 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Cloud, Github, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import {
+  Cloud,
+  Github,
+  Twitter,
+  Mail,
+  MapPin,
+  Phone,
+  Linkedin,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,13 +45,16 @@ const Footer = () => {
               >
                 <Twitter className="h-5 w-5" />
               </a>
-              {/* <a
-                href="gandhamprakashtech@gmail.com"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="Email"
+
+              <a
+                href="https://www.linkedin.com/in/gandhamkumarnslprakash/"
+                className="text-gray-400 hover-linkedin transition-colors duration-200"
+                aria-label="LinkedIn Profile"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Mail className="h-5 w-5" />
-              </a> */}
+                <Linkedin className="h-5 w-5" />
+              </a>
             </div>
           </div>
 
